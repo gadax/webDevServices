@@ -1,0 +1,69 @@
+<article style="width: 40%;">
+	<h2>Utilisateurs</h2>
+
+
+	<table class="dashboard">
+
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% users.forEach(ele => { %>
+				<tr>
+					<th><%= ele._id.toString().substring(ele._id.toString().length - 2) %></th>
+					<td><%= ele.last_name %></td>
+					<td><%= ele.first_name %></td>
+					
+					<td><button class="deleteUser" uid="<%= ele._id %>">Supprimer</button></td>
+				</tr>
+			<% }); %>
+		</tbody>
+
+	</table>
+</article>
+
+<article>
+	<h2>Add user</h2>
+
+	<form method="post" action="/add-user" enctype="multipart/form-data"><!--  -->
+		<label for="firstName">Prénom : </label>
+		<input type="text" name="firstName" id="firstName"><br>
+		<label for="lastName">Nom : </label>
+		<input type="text" name="lastName" id="lastName"><br>
+		<label for="pseudo">Pseudo : </label>
+		<input type="text" name="pseudo" id="pseudo"><br>
+		<label for="kind">Role : </label>
+		<input type="text" name="kind" id="kind"><br>
+		<label for="mail">Mail : </label>
+		<input type="email" name="mail" id="mail"><br>
+		<label for="password">Mot de passe : </label>
+		<input type="password" name="password" id="password"><br>
+
+		<label for="icon">Icone : </label>
+		<input type="file" name="icon" id="icon"><br>
+
+		<input type="submit" value="Enregistrer"><br>
+	</form>
+
+	<form method="post" action="/delete-user" id="delete-user" hidden>
+
+		<input type="hidden" name="id" id="delete-id">
+
+	</form>
+</article>
+
+<script type="text/javascript">
+	
+	$('.deleteUser').click(e => {
+		$('#delete-id').val($(e.currentTarget).attr('uid'));
+		$('#delete-user').submit();
+	});
+</script>
+

@@ -1,0 +1,8 @@
+[
+	{"pseudo": "senseo", "first_name": "se", "last_name": "mor", "mail": "", "password": "", "kind": "MANAGER"},
+	{"pseudo": "rom1", "first_name": "r", "last_name": "le", "mail": "" , "password": "", "kind": "DEV"},
+	{"pseudo": "yass", "first_name": "y", "last_name": "la", "mail": "" , "password": "", "kind": "PENTESTER"},
+	{"pseudo": "simon", "first_name": "si", "last_name": "mou", "mail": "" , "password": "", "kind": "PENTESTER"},
+	{"pseudo": "jule", "first_name": "j", "last_name": "b", "mail": "" , "password": "", "kind": "RESO"},
+	{"pseudo": "tom", "first_name": "t", "last_name": "ma", "mail": "" , "password": "", "kind": "RESO"},
+]
